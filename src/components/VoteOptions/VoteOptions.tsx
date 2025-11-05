@@ -13,7 +13,8 @@ export default function VoteOptions({onVote, onReset, canReset}: VoteOptionsProp
   <button type='button' onClick={() => onVote('good')} className={css.button}>Good</button>
   <button type='button' onClick={() => onVote('neutral')} className={css.button}>Neutral</button>
   <button type='button' onClick={() =>onVote('bad')} className={css.button}>Bad</button>
-  <button type='button' onClick={onReset} className={`${css.button} ${css.reset}`}>Reset</button>
+        {canReset && (<button type='button' onClick={onReset} className={`${css.button} ${css.reset}`}>Reset</button>)}
 </div>
     )
 }
+
