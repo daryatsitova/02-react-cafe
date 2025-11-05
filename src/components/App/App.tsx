@@ -4,6 +4,7 @@ import type { VoteType, Votes } from '../../types/votes'
 
 import CafeInfo from '../CafeInfo/CafeInfo'
 import VoteOptions from '../VoteOptions/VoteOptions';
+import VoteStats from '../VoteStats/VoteStats';
 
 export default function App() {
   const [votes, setVote] = useState<Votes>({ good: 0, neutral: 0, bad: 0 });
@@ -39,6 +40,10 @@ export default function App() {
           onVote={handleVote}
           onReset={resetVotes}
           canReset={totalVotes > 0} />
+        <VoteStats
+          votes={votes}
+          totalVotes={totalVotes}
+          positiveRate={0} />
       </div>
      
     </>
